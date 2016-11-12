@@ -1,0 +1,17 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "A simple node/angular js application",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+ "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
+ 
+  },
+  "author": "Prashant Biradar",
+  "license": "ISC"
+}
