@@ -26,11 +26,34 @@ module.exports = function (app) {
 
         // create a product, information comes from AJAX request from Angular
         Todo.create({
-            text: req.body.text,
+            name: req.body.name,
+            quantity: req.body.quantity,
             done: false
         }, function (err, product) {
-            if (err)
-                res.send(err);
+            if (err){
+                //res.send(err);
+            }
+
+            // get and return all the products after you create another
+            getTodos(res);
+        });
+
+    });
+
+    // create product and send back all products after creation
+    app.put('/api/products/:id', function (req, res) {
+        console.log(req.params);
+
+        // create a product, information comes from AJAX request from Angular
+        Todo.update({_id:req.params.id},
+        {
+            name: req.body.name,
+            quantity: req.body.quantity,
+            done: false
+        }, function (err, product) {
+            if (err){
+                //res.send(err);
+            }
 
             // get and return all the products after you create another
             getTodos(res);
